@@ -2,7 +2,7 @@
 terraform {
   backend "remote" {
     #         # The name of your Terraform Cloud organization.
-    organization = "bluemoonltd"
+    organization = "${TF_organization}"
     #
     #         # The name of the Terraform Cloud workspace to store Terraform state files in.
     workspaces {
@@ -11,9 +11,8 @@ terraform {
   }
 }
 
-#     # An example resource that does nothing.
-resource "null_resource" "test_example" {
-  triggers = {
-    value = "A example resource that does nothing!"
-  }
+provider "google" {
+  project = "${secrets.TF_PROJECTID}"
+  region  = var.region
+  zone    = var.zone
 }
