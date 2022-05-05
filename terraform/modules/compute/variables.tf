@@ -1,6 +1,5 @@
 variable "os_image" {
-    type = string
-  
+  type = string
 }
 
 variable "machine_name" {
@@ -12,6 +11,5 @@ variable "wkstation_machine_type" {
 }
 
 variable "desired_status" {
-    type = string
-  
+  type = string
 }

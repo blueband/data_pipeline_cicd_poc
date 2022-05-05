@@ -1,7 +1,7 @@
 variable "project" {
   description = "GCP Project ID"
   type        = string
-  default = "${secrets.TF_PROJECTID}"
+  default     = "${secrets.TF_PROJECTID}"
 }
 
 variable "data_lake_bucket" {
@@ -39,7 +39,7 @@ variable "wkstation_machine_type" {
 
 variable "wkstation_boot_disk_size_gb" {
   type = number
-  
+
 
 }
 
@@ -56,8 +56,8 @@ variable "service_account_email" {
 
 
 variable "os_image" {
-    type = string
-  
+  type = string
+
 }
 
 variable "machine_name" {
@@ -66,6 +66,6 @@ variable "machine_name" {
 
 
 variable "desired_status" {
-    type = string
-  
+  type = string
+
 }

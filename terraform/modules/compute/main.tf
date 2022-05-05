@@ -4,12 +4,12 @@ resource "google_service_account" "default" {
 }
 
 resource "google_compute_instance" "default" {
-  name         = var.machine_name
-  machine_type = var.wkstation_machine_type
-  zone         = var.zone
+  name           = var.machine_name
+  machine_type   = var.wkstation_machine_type
+  zone           = var.zone
   desired_status = var.desired_status
 
-#   tags = ["foo", "bar"]
+  #   tags = ["foo", "bar"]
 
   boot_disk {
     initialize_params {
@@ -30,11 +30,11 @@ resource "google_compute_instance" "default" {
     }
   }
 
-#   metadata = {
-#     foo = "bar"
-#   }
+  #   metadata = {
+  #     foo = "bar"
+  #   }
 
-#   metadata_startup_script = "echo hi > /test.txt"
+  #   metadata_startup_script = "echo hi > /test.txt"
 
   service_account {
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
