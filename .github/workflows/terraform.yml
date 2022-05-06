@@ -99,7 +99,7 @@ jobs:
     - name: Terraform Plan
       env:
         projectid: ${{ secrets.TF_PROJECTID }}
-      run: terraform plan -delete
+      run: terraform plan -destroy -input=false
       # run: cat .gitignore
 
       # On push to main, build or change infrastructure according to Terraform configuration files
