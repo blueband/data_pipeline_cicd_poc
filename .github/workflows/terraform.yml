@@ -71,10 +71,10 @@ jobs:
         shell: bash
 
     steps:
-      - name: Run maven command
-      run: |
-        cd ./terraform |
-        ls -al
+    - name: CD into Terraform Folder
+    run: |
+      cd ./terraform |
+      ls -al
 
 
     steps:
