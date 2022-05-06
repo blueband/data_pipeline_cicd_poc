@@ -56,7 +56,7 @@ permissions:
 # Section add to change the CWD
 defaults:
   run:
-    working-directory: ./terraform
+    working-directory: ../terraform
 
 jobs:
   terraform:
