@@ -60,14 +60,16 @@ jobs:
     name: 'Terraform'
     runs-on: ubuntu-latest
     environment: production
+    env:
+      working-directory: ./terraform      # To fix folder where Terraform files are located
    
 
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
-      run:
+      run: 
         shell: bash
-        # working-directory: ./terraform      # To fix folder where Terraform files are located
+        
 
     steps:
     # Checkout the repository to the GitHub Actions runner
@@ -83,20 +85,24 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: terraform init
+      run: ls -R
 
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
       run: terraform fmt -check
+      run: ls -R
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       env:
         projectid: ${{ secrets.TF_PROJECTID }}
       run: terraform plan -input=false
+      run: ls -R
 
       # On push to main, build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       run: terraform apply -auto-approve -input=false
+      run: ls -R
