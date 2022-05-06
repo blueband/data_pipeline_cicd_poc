@@ -60,23 +60,18 @@ jobs:
     name: 'Terraform'
     runs-on: ubuntu-latest
     environment: production
-    # Section add to change the CWD
-    defaults:
-      run:
-        working-directory: ./terraform
+
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
         shell: bash
 
-    - name: CD into Terraform Folder
-    run: |
-      cd ./terraform |
-      ls -al
-
-
     steps:
+    - shell: bash
+      run: |
+        echo [ls -al]
+
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v3
