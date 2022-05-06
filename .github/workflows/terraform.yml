@@ -68,10 +68,6 @@ jobs:
         shell: bash
 
     steps:
-    - shell: bash
-      run: |
-        echo [ls -al]
-
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v3
@@ -85,6 +81,10 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: terraform init
+      
+    - shell: bash
+      run: |
+        echo [ls -al]
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
