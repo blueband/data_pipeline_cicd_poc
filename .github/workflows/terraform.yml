@@ -60,8 +60,8 @@ jobs:
     name: 'Terraform'
     runs-on: ubuntu-latest
     environment: production
-    env:
-      working-directory: ./terraform      # To fix folder where Terraform files are located
+    # env:
+    #   working-directory: ./terraform      # To fix folder where Terraform files are located
    
 
 
