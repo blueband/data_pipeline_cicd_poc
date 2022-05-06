@@ -85,6 +85,8 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
+      env:
+        projectid: ${{ secrets.TF_PROJECTID }}
       run: terraform plan -input=false
 
       # On push to main, build or change infrastructure according to Terraform configuration files

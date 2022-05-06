@@ -1,8 +1,9 @@
 module "compute" {
-  name           = var.machine_name
-  machine_type   = var.wkstation_machine_type
-  zone           = var.zone
+  source         = "./modules/compute"
+  machine_name           = var.machine_name
+  wkstation_machine_type   = var.wkstation_machine_type
+  compute_zone           = var.compute_zone
   desired_status = var.desired_status
-  image          = var.os_image
+  os_image          = var.os_image
 
 }

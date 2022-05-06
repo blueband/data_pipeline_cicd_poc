@@ -13,3 +13,6 @@ variable "wkstation_machine_type" {
 variable "desired_status" {
   type = string
 }
+variable "compute_zone" {
+  type = string
+}

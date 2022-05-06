@@ -20,5 +20,5 @@ terraform {
 provider "google" {
   project = var.projectid
   region  = var.region
-  zone    = var.zone
+  zone    = var.compute_zone
 }
