@@ -1,13 +1,19 @@
 # The configuration for the `remote` backend.
 terraform {
-  backend "remote" {
-    #         # The name of your Terraform Cloud organization.
-    organization = "bluemoonltd"
-    #
-    #         # The name of the Terraform Cloud workspace to store Terraform state files in.
-    workspaces {
-      name = "gh-action-setup"
-    }
+  # Terraform Backend  
+  # backend "remote" {
+  #   #         # The name of your Terraform Cloud organization.
+  #   organization = "bluemoonltd"
+  #   #
+  #   #         # The name of the Terraform Cloud workspace to store Terraform state files in.
+  #   workspaces {
+  #     name = "gh-action-setup"
+  #   }
+  # }
+
+    backend "gcs" {
+    bucket  = "tf-tfstatefile"
+    prefix  = "terraform/state"
   }
 }
 
