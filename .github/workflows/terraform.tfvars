@@ -1,3 +1,4 @@
+project = TF_VAR_projectid
 region = "us-east1"
 zone = "us-east1-b"
 wkstation_boot_disk_size_gb = 100

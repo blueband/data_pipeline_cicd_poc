@@ -1,7 +1,7 @@
 variable "project" {
   description = "GCP Project ID"
   type        = string
-  default     = "${secrets.TF_PROJECTID}"
+  # default     = "${secrets.TF_PROJECTID}"
 }
 
 variable "data_lake_bucket" {
