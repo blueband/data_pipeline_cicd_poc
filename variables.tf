@@ -1,4 +1,4 @@
-variable "projectid" {
+variable "TF_VAR_projectid" {
   description = "GCP Project ID"
   type        = string
   # default     = "${secrets.TF_PROJECTID}"
