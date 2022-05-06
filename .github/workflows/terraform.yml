@@ -84,7 +84,7 @@ jobs:
 
     - shell: bash
       run: |
-        echo ls -al
+        echo  $GITHUB_WORKSPACE
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
