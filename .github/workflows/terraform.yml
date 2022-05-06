@@ -60,8 +60,8 @@ jobs:
     name: 'Terraform'
     runs-on: ubuntu-latest
     environment: production
-    # env:
-    #   working-directory: ./terraform      # To fix folder where Terraform files are located
+    env:
+      working-directory: terraform      # To fix folder where Terraform files are located
    
 
 
@@ -87,6 +87,7 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       # run: terraform init
+      working-directory: ${{env.working-directory}}
       run: ls -R
 
 
