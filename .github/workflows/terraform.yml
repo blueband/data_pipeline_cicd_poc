@@ -53,21 +53,29 @@ on:
 permissions:
   contents: read
 
-# Section add to change the CWD
-defaults:
-  run:
-    working-directory: ./terraform
+
 
 jobs:
   terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
     environment: production
+    # Section add to change the CWD
+    defaults:
+      run:
+        working-directory: ./terraform
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
         shell: bash
+
+    steps:
+      - name: Run maven command
+      run: |
+        cd ./terraform |
+        ls -algit
+
 
     steps:
     # Checkout the repository to the GitHub Actions runner
