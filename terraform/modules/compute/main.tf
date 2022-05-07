@@ -13,7 +13,7 @@ resource "google_compute_instance" "default" {
   }
 
 metadata = {
-    monitor_uptime_script = file("https://gist.githubusercontent.com/justinshenk/312b5e0ab7acc3b116f7bf3b6d888fa4/raw/59f021c2bf0388ba36e5a589dba52e233ee84964/idle-shutdown.sh")
+    monitor_uptime_script = "https://gist.githubusercontent.com/justinshenk/312b5e0ab7acc3b116f7bf3b6d888fa4/raw/59f021c2bf0388ba36e5a589dba52e233ee84964/idle-shutdown.sh"
   }
 
   network_interface {
