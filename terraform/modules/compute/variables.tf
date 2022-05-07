@@ -16,3 +16,8 @@ variable "desired_status" {
 variable "compute_zone" {
   type = string
 }
+
+variable "disk_type" {
+  type = string
+
+}
