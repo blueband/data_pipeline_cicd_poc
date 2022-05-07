@@ -17,8 +17,8 @@ terraform {
   # }
 }
 
-# provider "google" {
-#   project = var.projectid
-#   region  = var.region
-#   zone    = var.compute_zone
-# }
+provider "google" {
+  project = var.projectid
+  region  = var.region
+  zone    = var.compute_zone
+}
