@@ -5,5 +5,4 @@ wkstation_machine_type      = "e2-standard-2"
 os_image                    = "ubuntu-os-cloud/ubuntu-2110"
 desired_status              = "RUNNING"
 machine_name                = "workstation-4-development"
-disk_type                   = "PD_SSD"
-#
+disk_type                   = "pd-ssd"
