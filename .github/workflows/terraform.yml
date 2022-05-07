@@ -88,7 +88,9 @@ jobs:
       run:  |
         echo "i am in defaults local folder"
         ls -al |
-        cd terraform | echo "I am in a new folder named terraform" | ls -al
+        cd ./terraform | 
+        echo "I am in a new folder named terraform" | 
+        ls -al
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: terraform init
