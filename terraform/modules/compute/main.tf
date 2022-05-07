@@ -8,8 +8,12 @@ resource "google_compute_instance" "default" {
   boot_disk {
     initialize_params {
       image = var.os_image
+      type  = var.disk_type
     }
   }
+
+
+
 
   // Local SSD disk
   scratch_disk {

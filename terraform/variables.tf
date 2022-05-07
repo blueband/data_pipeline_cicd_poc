@@ -32,3 +32,8 @@ variable "machine_name" {
 variable "desired_status" {
   type = string
 }
+
+variable "disk_type" {
+  type = string
+
+}
