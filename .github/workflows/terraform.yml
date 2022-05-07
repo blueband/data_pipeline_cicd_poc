@@ -112,7 +112,7 @@ jobs:
         projectid: ${{ secrets.TF_PROJECTID }}
       run: |
         cd terraform
-        terraform plan -input=false
+        terraform plan -var-file="terraform.tfvars" -input=false
       # run: cat .gitignore
 
       # On push to main, build or change infrastructure according to Terraform configuration files
@@ -121,5 +121,5 @@ jobs:
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       run: |
         cd terraform
-        terraform apply -auto-approve -input=false
+        terraform apply -auto-approve -var-file="terraform.tfvars" -input=false
       # run: ls -R
